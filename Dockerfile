@@ -9,7 +9,7 @@ RUN apt update &&\
   gnupg2 \
   gnupg1 &&\
   wget -O - https://repo.saltstack.com/py3/ubuntu/18.04/amd64/latest/SALTSTACK-GPG-KEY.pub | apt-key add - &&\
-  echo "deb http://repo.saltstack.com/py3/ubuntu/18.04/amd64/latest bionic main" | tee /etc/apt/sources.list.d/saltstack.list &&
+  echo "deb http://repo.saltstack.com/py3/ubuntu/18.04/amd64/latest bionic main" | tee /etc/apt/sources.list.d/saltstack.list &&\
   apt update &&\
   apt-get -y install salt-master &&\
   apt-get -y autoremove && \
