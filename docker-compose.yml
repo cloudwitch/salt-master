@@ -21,7 +21,7 @@ services:
       - type: bind
         source: /srv/salt
         target: /srv/salt
-      - type:
+      - type: bind
         source: /srv/pillar
         target: /srv/pillar
     ports:
