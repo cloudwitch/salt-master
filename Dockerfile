@@ -16,7 +16,6 @@ RUN apt update &&\
   salt-cloud \
   salt-common \
   salt-pepper \
-  salt-proxy \
   salt-ssh \
   salt-syndic &&\
   apt-get -y autoremove && \
