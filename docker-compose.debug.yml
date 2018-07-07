@@ -1,0 +1,11 @@
+version: '2.1'
+
+services:
+  salt-master:
+    image: salt-master
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 4505:4505
+      - 4506:4506

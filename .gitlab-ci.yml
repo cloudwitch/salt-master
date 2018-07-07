@@ -1,0 +1,24 @@
+image: docker:latest
+
+before_script:
+  - docker login -u "$DOCKER_REGISTRY_USER" -p "$DOCKER_REGISTRY_PASSWORD"
+
+build-master:
+  stage: build
+  script:
+    - docker build -t "$DOCKER_REGISTRY_USER/$CI_PROJECT_NAME:latest" .
+    - docker push "$DOCKER_REGISTRY_USER/$CI_PROJECT_NAME:latest"
+  only:
+    - master
+  tags:
+    - dockerbuild
+
+build:
+  stage: build
+  script:
+    - docker build --pull -t "$DOCKER_REGISTRY_USER/$CI_PROJECT_NAME:$CI_COMMIT_REF_SLUG" .
+    - docker push "$DOCKER_REGISTRY_USER/$CI_PROJECT_NAME:$CI_COMMIT_REF_SLUG"
+  except:
+    - master
+  tags:
+    - dockerbuild
