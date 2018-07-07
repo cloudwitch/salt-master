@@ -8,6 +8,7 @@ RUN apt update &&\
   gnupg2 \
   gnupg1 &&\
   wget -O - https://repo.saltstack.com/py3/ubuntu/18.04/amd64/latest/SALTSTACK-GPG-KEY.pub | apt-key add - &&\
+  apt-get -y install salt-master &&\
   apt-get -y autoremove && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/
