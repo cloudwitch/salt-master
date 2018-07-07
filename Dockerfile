@@ -23,6 +23,6 @@ RUN apt update &&\
   apt-get clean && \
   rm -rf /var/lib/apt/lists/ &&\
   chmod +x /docker-entrypoint.sh
-EXPOSE 4505 4506
+EXPOSE 443 4505 4506
 
 CMD /docker-entrypoint.sh
