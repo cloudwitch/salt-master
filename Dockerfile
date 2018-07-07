@@ -1,6 +1,7 @@
 
 FROM ubuntu:latest
 LABEL Name=salt-master Version=0.0.1
+COPY docker-entrypoint.sh /
 RUN apt update &&\
   apt-get -y upgrade &&\
   apt-get -y install wget \
@@ -11,5 +12,8 @@ RUN apt update &&\
   apt-get -y install salt-master &&\
   apt-get -y autoremove && \
   apt-get clean && \
-  rm -rf /var/lib/apt/lists/
+  rm -rf /var/lib/apt/lists/ &&\
+  chmod +x /docker-entrypoint.sh
 EXPOSE 4505 4506
+
+CMD /docker-entrypoint.sh
