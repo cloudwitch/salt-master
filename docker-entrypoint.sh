@@ -1,2 +1,2 @@
 #!/bin/bash
-/etc/init.d/salt-master --log-level=error
+/etc/init.d/salt-master start --log-level=error
