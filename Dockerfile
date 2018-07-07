@@ -1,7 +1,7 @@
 
 FROM ubuntu:latest
 LABEL Name=salt-master Version=0.0.1
-COPY docker-entrypoint.sh /
+#COPY docker-entrypoint.sh /
 RUN apt update &&\
   DEBIAN_FRONTEND=noninteractive apt-get -y upgrade &&\
   DEBIAN_FRONTEND=noninteractive apt-get -y install wget \
@@ -20,8 +20,9 @@ RUN apt update &&\
   salt-syndic &&\
   apt-get -y autoremove && \
   apt-get clean && \
-  rm -rf /var/lib/apt/lists/ &&\
-  chmod +x /docker-entrypoint.sh
+  rm -rf /var/lib/apt/lists/
+#   &&\
+#  chmod +x /docker-entrypoint.sh
 EXPOSE 443 4505 4506
 
-CMD /docker-entrypoint.sh
+CMD salt-master --log-level=error
