@@ -2,7 +2,7 @@
 
 Salt-Master by Saltstack.
 
-Base image is ubuntu:latest.  The salt repos are pulled directly from repos.saltstack.com to assure the latest version.  Included in the git project is a docker-compose.yml that works with Docker Swarm.
+Base image is ubuntu:latest.  The salt repos are pulled directly from repos.saltstack.com to assure the latest version.  These are the python3 repos.  Included in the git project is a docker-compose.yml that works with Docker Swarm.
 
 This container has all the salt-master goodies installed:
 * salt-master
