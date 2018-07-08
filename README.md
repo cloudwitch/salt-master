@@ -22,5 +22,5 @@ Your mount points are:
 
 docker run:
 ```bash
-docker run -it pheonix991/salt-master:latest
+docker run -it -v /etc/salt:/etc/salt -v /srv/salt:/srv/salt -v /srv/pillar:/srv/pillar -v /etc/timezone:/etc/timezone:ro -p 4505:4505 -p 4506:4506 pheonix991/salt-master:latest
 ```
