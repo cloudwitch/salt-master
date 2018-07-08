@@ -15,15 +15,10 @@ services:
         limits:
           memory: 1.5G
     volumes:
-      - type: bind
-        source: /etc/salt
-        target: /etc/salt
-      - type: bind
-        source: /srv/salt
-        target: /srv/salt
-      - type: bind
-        source: /srv/pillar
-        target: /srv/pillar
+      - /etc/salt:/etc/salt
+      - /srv/salt:/srv/salt
+      - /srv/pillar:/srv/pillar
+      - /etc/timezone:/etc/timezone:ro
     ports:
       - 4505:4505
       - 4506:4506
