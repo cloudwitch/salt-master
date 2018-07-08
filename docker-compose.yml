@@ -19,6 +19,7 @@ services:
       - /srv/salt:/srv/salt
       - /srv/pillar:/srv/pillar
       - /etc/timezone:/etc/timezone:ro
+      - /srv/reactor:/srv/reactor
     ports:
       - 4505:4505
       - 4506:4506
