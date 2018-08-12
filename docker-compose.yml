@@ -15,11 +15,11 @@ services:
         limits:
           memory: 1.5G
     volumes:
-      - /etc/salt:/etc/salt
-      - /srv/salt:/srv/salt
-      - /srv/pillar:/srv/pillar
+      - /storage/docker/salt/salt-master-etc_salt:/etc/salt
+      - /storage/docker/salt/salt_gitfs:/srv/salt
+      - /storage/docker/salt/pillar:/srv/pillar
       - /etc/timezone:/etc/timezone:ro
-      - /srv/reactor:/srv/reactor
+      - /storage/docker/salt/reactor:/srv/reactor
     ports:
       - 4505:4505
       - 4506:4506
