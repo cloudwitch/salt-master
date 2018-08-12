@@ -17,7 +17,7 @@ services:
     volumes:
       - /storage/docker/salt/salt-master-etc_salt:/etc/salt
       - /storage/docker/salt/salt_gitfs:/srv/salt
-      - /storage/docker/salt/pillar:/srv/pillar
+      - /storage/docker/salt/salt-pillar:/srv/pillar
       - /etc/timezone:/etc/timezone:ro
       - /storage/docker/salt/reactor:/srv/reactor
     ports:
